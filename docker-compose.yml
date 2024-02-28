@@ -1,0 +1,17 @@
+services:
+  nginx:
+    build:
+      context: ./nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx-conf:/etc/nginx/conf.d
+    networks:
+      - NNET
+
+networks:
+  NNET:
+    driver: bridge
+
+
+
